@@ -35,10 +35,7 @@ namespace Miniblog.Core.Services
         {
             bool isAdmin = IsAdmin();
 
-            var posts = _cache
-                .Where(p => p.PubDate <= DateTime.UtcNow && (p.IsPublished || isAdmin))
-                .Skip(skip)
-                .Take(count);
+            var posts = _cache.Where(p => /*p.PubDate <= DateTime.UtcNow &&*/ (p.IsPublished || isAdmin)).Skip(skip).Take(count);
 
             return Task.FromResult(posts);
         }
@@ -48,7 +45,7 @@ namespace Miniblog.Core.Services
             bool isAdmin = IsAdmin();
 
             var posts = from p in _cache
-                        where p.PubDate <= DateTime.UtcNow && (p.IsPublished || isAdmin)
+                        where /*p.PubDate <= DateTime.UtcNow &&*/ (p.IsPublished || isAdmin)
                         where p.Categories.Contains(category, StringComparer.OrdinalIgnoreCase)
                         select p;
 

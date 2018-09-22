@@ -1,4 +1,4 @@
-﻿@import "variables";
+﻿@import "_variables.scss";
 
 // Lazy loading of images. See /js/site.js for more
 .notloaded {
@@ -195,4 +195,35 @@ noscript p {
     a[href^="http"]:after, a[href^="//"]:after {
         content: " <" attr(href) "> ";
     }
+}
+
+.siteheader {
+    text-align: right;
+    padding: .8em 1.5em 2em 1.5em;
+    background-color: #222;
+    color: whitesmoke;
+}
+
+.siteheader a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+body {
+    color: #222;
+    background-color: whitesmoke;
+}
+
+.post {
+    background-color: white;
+}
+
+.post header h1 a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+body {
+    background-color: whitesmoke;
 }
